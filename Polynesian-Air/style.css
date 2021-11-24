@@ -1,0 +1,822 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* begin my code */
+
+/* global styles */
+
+/* From Stack Overflow link: https://stackoverflow.com/questions/32660748/how-to-use-apples-new-san-francisco-font-on-a-webpage */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+/* Sets the font and font size for the whole page and also makes it so the x axis cannot be scrolled over */
+body, html {
+  font-size: 16px;
+  overflow-x: hidden;
+  font-family: "San Francisco", "Helvetica Neue", Arial;
+}
+
+/* Sets navbar to the color white */
+.navbar {
+  background-color: white;
+}
+
+/* Sets the color of the links in the navbar to black */
+nav .navbar-nav li a {
+  color: black !important;
+}
+
+/* Sets the color of the links in the navbar when hovered over to a nice blue */
+nav .navbar-nav li a:hover {
+  color: #208EB1 !important;
+}
+
+/* Sets the hamburger button to a light blue color */
+.navbar-toggler {
+  background-color: #4bc7cf;
+}
+
+/* Makes the list elements in the dropdown appear on the right side, also sets space between elements as well as the font size */
+#navbar1 li {
+  text-align: right;
+  margin: .5em;
+  font-size: 20px;
+}
+
+/* Sets the size of the logo in the navbar */
+#logo-air-polynesia {
+  width: 7em;
+}
+
+/* Gives the three parrel lines within the hambuguger button room */
+.navbar-toggler, navbar-brand {
+  padding: .4em .6em;
+}
+
+/* Makes it so that certian list elements that are irrelevant to mobile users are disabled */
+#top-part-nav {
+  display: none;
+}
+
+/* Sets all h2 elements to a default custom style */
+h2 {
+  font-size: 50px;
+  text-align: center;
+  padding-top: .7em;
+  padding-bottom: 1em;
+}
+
+#icons svg:hover {
+  fill: #208EB1;
+  cursor: pointer;
+}
+
+footer p:hover {
+  color: #208EB1;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+
+/* Sets the styles for the form element at the top of the page */
+#topForm {
+  background-color: #4bc7cf;
+  padding: 1.2em;
+  opacity: 85%;
+  position: absolute;
+  top: 12em;
+  left: 0;
+  text-align: center;
+  border-radius: 7px;
+  width: 100%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+}
+
+/* Gives the images on the bootsrap carrosel curved edges as well as a shadow */
+#locations img {
+  border-radius: 7px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, .5);
+}
+
+/* Centers the location header and sets the margin between the header and the image below it */
+#locations h2 {
+  text-align: center;
+  margin-bottom: -.5em;
+}
+
+/* Sets the margin font size and line height to make the text look nice */
+#locations p {
+  margin: 1em;
+  font-size: 22px;
+  line-height: 1.5em;
+}
+
+/* Styles and positions the header on top the says 'Find Your Island Paradise' */
+.header-top {
+  font-size: 53px;
+  margin-top: .75em;
+  text-align: center;
+  color: rgba(255, 127, 82, 1);
+  font-weight: bolder;
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, .9);
+}
+
+/* Sets the background image for the home page */
+#top {
+  background-image: url("img/turtle.jpeg");
+  height: 550px;
+  background-color: #4bc7cf;
+  background-repeat: no-repeat;
+  background-position: -200px 17px;
+  background-size: cover;
+}
+
+/* Sets the background image for the top of the Island Hopper Passes page */
+#top-passes {
+  background-image: url("img/island-hopper-passes.jpeg");
+  width: 100%;
+  height: 600px;
+  background-color: #4bc7cf;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 70px;
+}
+
+/* Makes it so that the desktop passes do not display on smaller devices */
+.desktopPasses, .desktopDestination, .desktopPass {
+  display: none;
+}
+
+/* Positions and sets the style for the name of the island hopper pass */
+#top-passes h2 {
+  position: relative;
+  top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+/* Sets the background image for the top of the Guide page */
+#top-guide {
+  background-image: url("img/polynesia-beach.jpeg");
+  width: fit-content;
+  height: 500px;
+  margin-top: 2em;
+  margin-left: -15em;
+  background-color: #4bc7cf;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Sets the style and positioning of the header that says 'Explore the Island of Polynesia' */
+#top-guide h2 {
+  font-size: 35px;
+  font-weight: 900;
+  margin-left: 9em;
+  margin-top: 2.5em;
+  margin-right: .3em;
+  text-align: right;
+}
+
+/* Sets the positioning and styling of the paragraph below the top header of the Guide page */
+#top-guide p {
+  font-size: 18px;
+  font-weight: 900;
+  margin-left: 21.75em;
+  margin-right: .6em;
+  margin-top: -1.4em;
+  text-align: right;
+  line-height: 1.6em;
+}
+
+/* Sets the background color for the passes section on the island hopper passes page and the color for the locations section on the Guide page  */
+#passes, #locations {
+  background-color: rgba(75, 199, 207, .5);
+}
+
+/* Sets the font size of the name of the pass */
+#passes h4 {
+  font-size: 30px;
+  margin-top: 1em;
+  margin-left: .5em;
+}
+
+/* Sets the font size for the islands listed on the pass */
+#passes h6 {
+  font-size: 20px;
+  margin-top: .3em;
+  margin-left: .8em;
+}
+
+/* Sets the font size of the price on the passes */
+#passes h3 {
+  font-size: 25px;
+  position: absolute;
+  left: .6em;
+  bottom: 1em;
+}
+
+/* Sets the size of the length of the total area of the cards
+  Used swiper the slider function for the cards on screen
+  Swiper: https://swiperjs.com/demos
+ */
+#passes .swiper {
+  width: 1300px;
+}
+
+/* Sets the background color for the passes as well as a diffrent height to fit all the text */
+#passes .swiper-slide {
+  background-color: rgba(255, 65, 65, .5);
+  margin-top: 3em;
+  height: 470px;
+}
+
+/* Sets the color and margins of the text that says 'Round Trip on the form' */
+#labelRoundTrip {
+  margin-right: 4em;
+  margin-bottom: 2em;
+  color: black;
+}
+
+/* Sets the color of the text that says 'One-way on the form' */
+#labelOne-way {
+  color: black;
+}
+
+/* Sets the margin between the two radio buttons as well as the margin below the two radio buttons and labels */
+#one-way {
+  margin-left: 6em;
+  margin-bottom: 2em;
+}
+
+/* Sets the color and margin for the label for Adults */
+#adults-label {
+  margin-left: -4em;
+  color: black;
+}
+
+/* Sets the color and margin for the label for Children */
+#children-label {
+  margin-left: 8.5em;
+  color: black;
+}
+
+/* Styles the button for the form that says book */
+#book-button {
+  margin-left: 12em;
+  width: 10em;
+  height: 2em;
+  background-color: #4bc7cf;
+  border: 2px solid black;
+  color: black;
+  margin-top: .6em;
+}
+
+/* Syles the two selector dropdowns in the form */
+#children, #adults {
+  width: 11em;
+  height: 2em;
+  background-color: #4bc7cf;
+  border: 2px solid black;
+  border-radius: 0;
+  color: black;
+}
+
+/* Styles the four input elements on the form */
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: #4bc7cf;
+  margin-bottom: 1.5em;
+}
+
+/* Uses a psuedo element to make the placeholder black  */
+::placeholder {
+  color: black;
+}
+
+/* Sets the backgound color of the section beneath the form to a light blue */
+#locationsSection {
+  background-color: rgba(75, 199, 207, .5);
+}
+
+/* Sets the size of the iframe as well as curves the edges of the iframe */
+iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 7px;
+}
+
+/* Styles the paragraph beneath the iframe */
+#locationsSection p {
+  font-size: 30px;
+  padding: 1em 1em;
+  line-height: 1.5em;
+}
+
+/* Sets the background color of section with the header 'About Our Destinations' to a coral color */
+#aboutOurDestinationsSection {
+  background-color: rgba(255, 127, 82, .5);
+  
+}
+
+/* Sets the width of the cards on the swiper */
+.swiper {
+  width: 1150px;
+}
+
+/* Sets the background color as well as margins and shadow for cards on the slider */
+.swiper-slide {
+  background-color: #fff;
+  height: 400px;
+  margin: .5em .4em;
+  border-radius: 12px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+  margin-bottom: 10em;
+}
+
+/* Sets the image to be centered on the cards and to all be the same size */
+.image {
+  display: block;
+  margin-top: 1.4em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+/* Sets the padding font size and line height paragraph on the card slide  */
+.swiper-slide p {
+  font-size: 17px;
+  padding-top: 1.1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: 1.3em;
+}
+
+/* This is used to fix a issue with cards not being able to be swiped over to */
+.noDisplay {
+  display: none;
+}
+
+/* This is used to fix a issue with cards not being able to be swiped over to */
+.noVisibility {
+  visibility: hidden;
+  background-color: rgba(255, 127, 82, .5);
+  box-shadow: none;
+  width: 100px;
+}
+
+/* Styles the two buttons that are below the About Our Desitions section as well the Island Hopper Passes section on the home page.  */
+.bottom-button {
+  background-color: rgb(75, 199, 207);
+  width: 13em;
+  height: 3em;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -1em);
+  text-align: center;
+  border: 1px solid black;
+  color: black;
+  font-size: 20px;
+}
+
+/* Sets the background color of the section with the header 'Island Hopper Passes' on the home page */
+#islandHopperPassesSection {
+  background-color: rgba(255, 164, 67, .5);
+}
+
+/* Sets the background color of the pass cards on the home page as well as the height  */
+.pass {
+  background-color: rgba(255, 65, 65, .5);
+  height: 300px;
+}
+
+/* Sets the style and margins for the pass name on the pass cards on the home page */
+.pass h3 {
+  font-size: 45px;
+  text-align: left;
+  margin-top: 1em;
+  margin-left: .5em;
+}
+
+/* Makes sure that the price is displayed at the same position on all cards */
+.pass h4 {
+  position: absolute;
+  font-size: 27px;
+  bottom: 2em;
+  left: 1em;
+}
+
+#social-media {
+  position: relative;
+  top: -200px;
+  left: 50%;
+}
+
+/* Sets the size of the logo image in the footer also positions the logo in the proper place */
+footer img {
+  width: 12em;
+  /* position: relative;
+  top: -180px;
+  left: 140%; */
+}
+
+footer img:hover {
+  cursor: pointer;
+}
+
+/* Sets the size and postioning of the social media icons in the proper place in the footer */
+footer svg {
+  width: 1.6em;
+  margin: 1em .3em;
+  /* position: relative;
+  top: -180px;
+  left: 155%; */
+}
+
+#icons {
+  width: 150%;
+}
+
+/* Sets the styling of the group titles in the footer */
+footer h4 {
+  font-weight: bolder;
+  font-size: 16px;
+  margin-bottom: .6em;
+  margin-top: 1.8em;
+}
+
+/* Makes spaces between list elements in the footer */
+footer p {
+  margin-bottom: .3em;
+}
+
+/* Sets the 'This site is for educational purposes only' text to italic and positons it into it's proper place */
+footer small {
+  font-style: italic;
+  text-align: right;
+  position: relative;
+  top: -100px;
+}
+
+/* For tablet sized screens */
+@media only screen and (min-width: 768px) {
+  
+  #top-part-nav {
+    display: inline-block;
+    position: absolute;
+    right: 1em;
+    top: .3em;
+    text-align: right;
+  }
+
+  #top-part-nav li {
+    font-size: 15px;
+  }
+
+  #bottom-part-nav {
+    margin-top: 3em;
+  }
+
+  .navbar {
+    height: 10em;
+  }
+
+  #logo-air-polynesia {
+    width: 12em;
+  }
+
+  #logo-air-polynesia:hover {
+    cursor: pointer;
+  }
+
+  #search {
+    border: 1.5px solid black;
+    background-color: transparent;
+    border-radius: 3px;
+  }
+
+  .bi-search {
+    margin-left: -1.7em;
+  }
+
+  #language {
+    border: none;
+    font-size: 25px;
+    position: relative;
+    top: 5px;
+  }
+
+  ul > li {
+    display: inline-block;
+  }
+
+  #top {
+    background-position: center;
+    color: white;
+  }
+
+  #topForm {
+    width: 26em;
+    margin-left: 3em;
+  }
+
+  .header-top {
+    color: white;
+    position: absolute;
+    right: 10%;
+    font-size: 77px;
+    top: 1em;
+    left: 56%;
+    text-align: left;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, .6);
+    
+  }
+
+  #top-guide h2 {
+    /* margin-top: 10em; */
+    margin-top: 4em;
+    padding-top: 1.5em;
+    padding-right: .2em;
+    font-size: 38px;
+  }
+
+  #top-guide p {
+    padding-top: 1em;
+    padding-left: 15%;
+    padding-right: .4em;
+    font-size: 20px;
+  }
+
+  #top-passes h2 {
+    top: 160px;
+    text-align: center;
+  }
+
+  /* Sets section headers to align left and have a margin on the left as well */
+  h2 {
+    text-align: left;
+    margin-left: .7em;
+  }
+
+  iframe {
+    width: 35em;
+    height: 25em;
+    margin-left: 2em;
+  }
+
+  #locationsSection p {
+    padding-top: 0;
+    margin-top: -.3em;
+  }
+
+  #social-media {
+    top: -100px;
+    left: 70%;
+  }
+
+  footer small {
+    position: relative;
+    top: -50px;
+  }
+
+  footer img {
+    width: 14.5em;
+    transform: translate(-15px, 0);
+  }
+
+  footer svg {
+    width: 1.9em;
+  }
+
+}
+
+/* For desktops */
+@media only screen and (min-width: 1000px) {
+  #top {
+    width: 1250px;
+    margin: 0 auto;
+  }
+
+
+  #top h2 {
+    margin-right: 10%;
+  }
+
+  #topForm {
+    left: 10%;
+  }
+
+  #top-guide h2 {
+    padding-top: 1em;
+    font-size: 44px;
+  }
+
+  #top-guide p {
+    font-size: 28px;
+    margin-left: 34%;
+  }
+
+  iframe {
+    margin-bottom: 4em;
+    /* golden ratio */
+    width: 55.0131556175em;
+    height: 34em;
+  }
+
+  #locationsSection p {
+    font-size: 36px;
+    margin-top: -.5em;
+  }
+
+  #destinationsSlider, #islandHopperPassesSlider, #passesSlider {
+    display: none;
+  }
+
+  .bottom-button {
+    left: 80%;
+  }
+
+  .desktopPasses {
+    display: block;
+    width: 20em;
+    height: 30em;
+    background-color: rgba(255, 65, 65, .5);
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+    margin: .5em .4em;
+  }
+
+  .desktopPasses p {
+    font-size: 17px;
+    padding-top: 1.1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    line-height: 1.3em;
+  }
+
+ 
+  span {
+    font-size: 30px;
+  
+  }
+
+  .fixed-margin {
+    position: relative;
+    top: .4em;
+
+  }
+
+  .desktopDestination {
+    display: block;
+    background-color: #fff;
+    height: 400px;
+    width: 280px;
+    margin: .5em .4em;
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+    margin-bottom: 2em;
+  }
+
+  .desktopDestination p {
+    font-size: 17px;
+    padding-top: 1.1em;
+    padding-left: .3em;
+    padding-right: .3em;
+    line-height: 1.3em;
+  }
+
+  .image {
+    width: 98%;
+  }
+
+  #destinationMargin, #passMargin {
+    margin: 0 .5em;
+    margin-bottom: 4em;
+  }
+
+  .desktopPass {
+    display: block;
+    margin: .5em .4em;
+    background-color: rgba(255, 65, 65, .5);
+    height: 300px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+    margin-bottom: 2em;
+  }
+
+  .desktopPass h3 {
+    font-size: 40px;
+    text-align: left;
+    margin-top: 1em;
+    margin-left: .5em;
+  }
+  
+  .desktopPass h4 {
+    display: inline-block;
+    position: relative;
+    top: 5em;
+    bottom: 2em;
+    font-size: 30px;
+    margin-left: .7em;
+    margin-bottom: 1em;
+  }
+
+  .fixedSpacing h4 {
+    top: 3.7em;
+  }
+
+  #passesMargin {
+    padding: 2em 0;
+  }
+
+  .locationImage {
+    max-width: 80%;  
+    margin: 0 auto;
+  }
+
+  #locations p {
+    margin: 2em 6.6em;
+  }
+
+  .col-sm-8 {
+    transform: translate(70px, 30px);
+  }
+
+  footer img {
+    width: 16em;
+    transform: translate(-21px, 0);
+  }
+
+  footer svg {
+    width: 2em;
+  }
+
+  /* #top-guide h2 {
+    padding-top: .7em;
+    padding-right: 20%;
+  }
+
+  #top-guide p {
+    padding-right: 20%;
+  } */
+  
+}
+
+@media only screen and (min-width: 1250px) {
+  #top-passes, #top-guide {
+    width: 1250px;
+    margin: 0 auto;
+  }
+}
